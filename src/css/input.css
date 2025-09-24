@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #302C42;
+    --color-linear1: #8176AF;
+    --color-linear2: #C0B7E8;
+    --font-montserrat: "Montserrat", sans-serif;
+    --breakpoint-md: 55rem;
+}
+
+.btn {
+    @apply py-3.5 md:px-5 px-10 2xl:px-12 uppercase font-bold text-sm md:text-xs xl:text-sm border rounded-full hover:cursor-pointer transition duration-500 shadow-md ease-in-out
+}
+
+.btn1 {
+    @apply border border-white text-white hover:bg-gradient-to-r hover:from-linear1 hover:to-linear2 hover:text-[#343045] hover:border-0
+}
+
+.nav-link {
+    @apply cursor-pointer hover:text-linear2 hover:underline transition duration-300 ease-in-out
+}
+
+.btn-main {
+    @apply bg-gradient-to-r from-linear1 to-linear2 text-[#343045] hover:bg-primary hover:border-white hover:text-white hover:bg-none
+}
+
+/* Swiper pagination custom styles */
+.swiper-pagination-bullet {
+    @apply bg-linear1/50
+}
+
+.swiper-pagination-bullet-active {
+    background: linear-gradient(to right, var(--color-linear1), var(--color-linear2));
+}
+
+#swiper-1 .swiper-button-next::after,
+#swiper-1 .swiper-button-prev::after {
+    display: none !important;
+}
+
+#swiper-2 .swiper-button-next::after,
+#swiper-2 .swiper-button-prev::after {
+    display: none !important;
+}
+
+#swiper-3 .swiper-button-next::after,
+#swiper-3 .swiper-button-prev::after {
+    display: none !important;
+}
+
+#swiper-4 .swiper-button-next::after,
+#swiper-4 .swiper-button-prev::after {
+    display: none !important;
+}

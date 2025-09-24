@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tailwind Practice</title>
+        <link rel="stylesheet" href="css/output.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            />
+    </head>
+    <body class="bg-primary w-[95%] flex flex-col items-center justify-center md:w-[90%] mx-auto font-montserrat pb-12 md:pb-20 overflow-x-hidden">
+       
+        <header class="flex items-center mt-10 w-full justify-between relative">
+
+                <div class="xl:w-[30%] flex items-center gap-2 md:hidden xl:flex">
+                    <img src="images/logo.png" alt="logo" />
+                    <img src="images/logo text.png" alt="logo text" />
+                </div>
+                <!-- tablet logo -->
+                <div class="items-center gap-1 hidden md:flex xl:hidden">
+                    <img src="images/logo.png" alt="logo" class="transform scale-85"/>
+                    <img src="images/logo text.png" alt="logo text" class="transform scale-85"/>
+                </div>
+            
+                <!-- hamburger button -->
+                <button id="hamburger-btn" class="md:hidden z-50 relative">
+                    <div class="hamburger-icon">
+                        <img src="images/Hamburger-Button.png" alt="hamburger button" class="md:hidden">
+                    </div>
+                </button>
+            
+                <!-- Mobile Navigation Overlay -->
+                <div id="nav-overlay" class="fixed inset-0 bg-primary bg-opacity-50 z-30 md:hidden opacity-0 invisible transition-all duration-300"></div>
+
+                <!-- Mobile Navigation -->
+                <nav id="mobile-nav" class="fixed top-0 left-0 h-full w-80 bg-black/30 z-40 md:hidden transform -translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex flex-col h-full">
+                        <!-- Mobile nav header -->
+                        <div class="flex items-center justify-between p-6 border-b border-linear1">
+                            <div class="flex items-center gap-2">
+                                <img src="images/logo.png" alt="logo" class="w-8 h-8" />
+                                <img src="images/logo text.png" alt="logo text" class="w-20 h-6" />
+                            </div>
+                        </div>
+                
+                        <!-- Mobile nav items -->
+                        <div class="flex-1 px-6 py-8">
+                            <ul class="space-y-6">
+                                <li class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-100">
+                                    <a href="#about" class="block text-white text-lg font-bold uppercase hover:text-purple-300 transition-colors duration-200 py-2">About</a>
+                                </li>
+                                <li class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-200">
+                                    <a href="#services" class="block text-white text-lg font-bold uppercase hover:text-purple-300 transition-colors duration-200 py-2">Services</a>
+                                </li>
+                                <li class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-300">
+                                    <a href="#technologies" class="block text-white text-lg font-bold uppercase hover:text-purple-300 transition-colors duration-200 py-2">Technologies</a>
+                                </li>
+                                <li class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-500">
+                                    <a href="#howTo" class="block text-white text-lg font-bold uppercase hover:text-purple-300 transition-colors duration-200 py-2">How to</a>
+                                </li>
+                            </ul>
+                            <!-- Mobile nav buttons -->
+                            <div class="mt-12 space-y-4">
+                                <div class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-500">
+                                    <a href="#footer">
+                                        <button class="btn btn1 w-full">Contact Us</button>
+                                    </a>
+                                </div>
+                                <div class="mobile-nav-item opacity-0 transform -translate-x-5 transition-all duration-300 delay-600">
+                                    <a href="#joinHydra">
+                                        <button class="btn btn-main w-full">Join Hydra</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- desktop navbar -->
+                <nav class="xl:w-[70%] hidden items-center justify-between md:flex">
+                    <ul class="flex items-center text-white text-xs xl:text-base uppercase justify-between font-bold md:gap-x-5 xl:gap-12 2xl:gap-x-20">
+                        <li class="nav-link"><a href="#about">About</a></li>
+                        <li class="nav-link"><a href="#services">Services</a></li>
+                        <li class="nav-link"><a href="#technologies">Technologies</a></li>
+                        <li class="nav-link"><a href="#howTo">How to</a></li>
+                          <!-- Tablet button -->
+                        <div class="gap-x-2 xl:gap-x-10 hidden md:flex xl:hidden ml-4">
+                            <a href="#footer"><button class="btn btn1 cursor-pointer">contact us</button></a>
+                            <button class="btn btn-main"><a href="#joinHydra">Join Hydra</a></button>
+                        </div>
+                    </ul>
+                    <!-- Desktop buttons -->
+                    <div class="2xl:gap-x-10 xl:gap-7 hidden xl:flex xl:ml-5 2xl:ml-0">
+                        <a href="#footer"><button class="btn btn1 cursor-pointer">contact us</button></a>
+                        <button class="btn btn-main"><a href="#joinHydra">Join Hydra</a></button>
+                    </div>
+                  
+                </nav>
+                <!-- desktop nav end -->
+        </header>
+
+        <!-- header end -->
+
+        <!-- desktop -->
+        <img src="images/Vector 1.png" alt="vector" class="hidden xl:block transform md:scale-110 xl:scale-[120%] -z-50 absolute top-[20%] right-8">
+        <img src="images/Vector 2.png" alt="vector" class="hidden xl:block transform md:scale-110 xl:scale-[120%] -z-50 absolute top-8 right-[10%]">  
+        <img src="images/Vector 3.png" alt="vector" class="hidden xl:block transform md:scale-110 xl:scale-[120%] -z-50 absolute top-[50%] right-10">
+
+        <!-- tablet -->
+        <img src="images/Vector 1.png" alt="vector" class="hidden md:block xl:hidden transform scale-105  -z-50 absolute top-[20%] right-3">
+        <img src="images/Vector 2.png" alt="vector" class="hidden md:block xl:hidden transform scale-105  -z-50 absolute top-8 right-[10%]">  
+        <img src="images/Vector 3.png" alt="vector" class="hidden md:block xl:hidden transform scale-105 -z-50 absolute top-[60%] right-7">
+
+        
+        <!-- mobile -->
+        <img src="images/Vector 1.png" alt="vector" class="md:hidden transform scale-95  absolute -z-50 top-[20%] -right-0">
+        <img src="images/Vector 2.png" alt="vector" class="md:hidden transform  scale-85 absolute -z-50 -top-[10%] -left-5">  
+        <img src="images/Vector 3.png" alt="vector" class="md:hidden transform scale-90 -z-50 absolute top-[45%] left-0">
+
+
+        <!-- hero section -->
+        <main class="flex flex-col-reverse md:grid md:grid-cols-2 md:justify-items-stretch md:items-center xl:flex xl:flex-row w-full mt-16 2xl:mt-32 justify-between">
+            <div class="w-full xl:w-3/5 mt-8">
+                <h2 class="font-bold text-[22px] md:text-[34px] 2xl:text-6xl text-white 2xl:px-3 px-4 md:px-0 2xl:pr-[30%] tracking-[1px] leading-[180%] 
+                    md:leading-[160%] xl:leading-[130%] capitalize">
+                    <span class="text-linear1 text-[32px] md:text-[34px] 2xl:text-6xl">Dive</span> 
+                    Into The Depths Of 
+                    <span class="text-linear1 text-[32px] md:text-[34px] 2xl:text-6xl">Virtual Reality</span>
+                </h2>
+                <p class="text-white lg:text-lg xl:text-xl md:text-lg mt-10 md:block hidden [word-spacing:7px] xl:pr-[35%]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                   sed do eiusmod tempor incididunt ut labore et dolore 
+                   nisl tincidunt eget. Lectus mauris eros in vitae .
+                </p>
+
+                <!-- mobile button with short arrow -->
+                <div class="mt-7 w-full md:hidden items-center flex justify-center">
+                    <button class="btn btn-main text-2xl w-4/5">BUILD YOUR WORLD</button>
+                </div>
+
+                <!-- desktop button with short arrow -->
+                <div class="md:mt-4 xl:mt-10 hidden md:flex items-center">
+                    <button class="btn btn-main px-16 text-lg">BUILD YOUR WORLD</button>
+                    <img src="images/arrow-right.png" alt="arrow right" class="transform scale-x-105 ml-2">
+                </div>
+            </div>
+
+            <div class="bg-black/50 w-[95%] m-auto xl:w-2/5 flex justify-center items-center rounded-bl-[50%] rounded-[90px] p-4 xl:py-14 xl:px-16 2xl:p-4 2xl:py-18 2xl:rounded-[150px] 
+                2xl:rounded-bl-[50%] md:justify-items-stretch md:items-stretch xl:flex">
+                <img src="images/girl--with-vr.png" alt="girl's image" class="transform xl:scale-125 xl:scale-x-[130%] grow-[0.9] md:grid md:items-stretch
+                 2xl:grow-0 object-center"/>  
+            </div>
+        </main>
+
+        <!-- mobile purple section under hero-->
+        <div class="w-full md:hidden mt-16">   
+        <!-- Swiper container -->
+            <div class="swiper" id="swiper-1">
+
+             <!-- Pagination -->
+             <div class="swiper-pagination"></div>
+
+            <!-- Swiper wrapper -->
+                <div class="swiper-wrapper flex items-center relative">
+
+                    <div class="swiper-slide flex flex-row items-center justify-center w-full bg-linear-to-r from-[#211E2E] via-[#3A3456] to-[#211E2E] 
+                    rounded-full" style="display: flex; padding: 20px 25px; background: linear-gradient(to right, #211E2E, #3A3456, #211E2E); border-radius: 9999px;">
+                        <img src="images/Location-Icon.png" alt="location icon" class="transform">
+                        <span class="flex flex-col text-white gap-y-1.5">
+                            <h4 class="hidden md:block text-3xl font-bold">Pay Us a Visit</h4>
+                            <p class="text-base md:text-sm [word-spacing:3px]">Union St, Seattle, WA 98101, United States</p>
+                        </span>
+                    </div>
+
+                    <div class="swiper-slide md:flex gap-x-2 items-center justify-center w-full bg-linear-to-r from-[#211E2E] via-[#3A3456] to-[#211E2E] rounded-full"
+                        style="display: flex; padding: 20px 25px; background: linear-gradient(to right, #211E2E, #3A3456, #211E2E); border-radius: 9999px;">
+                        <img src="images/phone-call.png" alt="phone icon" class="transform scale-95 md:scale-105 pl-10 md:pl-0">
+                        <div class="flex flex-col text-white gap-y-1.5">
+                            <h4 class="hidden md:block text-3xl font-bold ">Give Us a Call</h4>
+                            <p class="text-base [word-spacing:5px] md:[word-spacing:0] pr-5 md:pr-0">(110) 1111-1010</p>
+                        </div>
+                    </div>
+                
+                    <div class="swiper-slide md:flex  items-center justify-center w-full bg-linear-to-r from-[#211E2E] via-[#3A3456] to-[#211E2E] rounded-full"
+                        style="display: flex; padding: 20px 25px; background: linear-gradient(to right, #211E2E, #3A3456, #211E2E); border-radius: 9999px;">
+                        <img src="images/mail.png" alt="mail icon" class="transform scale-95">
+                        <div class="flex flex-col text-white gap-y-1.5 pl-4">
+                            <h4 class="hidden md:block text-3xl font-bold">Send Us a Message</h4>
+                            <p class="text-base md:text-sm [word-spacing:5px] md:[word-spacing:0] pr-2 md:pr-0">Contact@HydraVTech.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Custom navigation buttons -->
+
+                <div class="swiper-button-prev">
+                    <img src="images/shape-left.png" alt="arrow left" class="md:hidden absolute top-1/2 -left-2 transform -translate-y-1/2 scale-[120%] z-10"> 
+                </div>
+
+                <div class="swiper-button-next">
+                    <img src="images/shape-right.png" alt="arrow right" class="md:hidden absolute top-1/2 -right-2 transform -translate-y-1/2 scale-[120%] z-10">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!--desktop purple section under hero -->
+        <section class="hidden w-full py-5 xl:px-20 xl:py-12 md:flex md:flex-row mt-16 md:mt-24 items-center md:justify-between bg-linear-to-r from-[#211E2E] via-[#3A3456] 
+            to-[#211E2E] rounded-full">    
+                
+            <div class="flex md:gap-x-2 items-center">
+                <img src="images/Location-Icon.png" alt="location icon" class="transform scale-95 md:scale-105 pl-10 md:pl-0">
+                <div class="flex flex-col text-white gap-y-1.5">
+                    <h4 class="hidden md:block text-3xl font-bold">Pay Us a Visit</h4>
+                    <p class="text-base md:text-sm [word-spacing:3px] md:[word-spacing:0] pr-5 md:pr-0">Union St, Seattle, WA 98101, United States</p>
+                </div>
+            </div>
+            <hr class="transform rotate-90 w-28 border-t border-linear2 hidden md:block">
+           
+            <div class="hidden md:flex gap-x-2 items-center">
+                <img src="images/phone-call.png" alt="location icon" class="transform scale-95 md:scale-105 pl-10 md:pl-0">
+                <div class="flex flex-col text-white gap-y-1.5">
+                    <h4 class="hidden md:block text-3xl font-bold">Give Us a Call</h4>
+                    <p class="text-base md:text-sm [word-spacing:5px] md:[word-spacing:0] pr-5 md:pr-0">(110) 1111-1010</p>
+                </div>
+            </div>
+           
+            <hr class="transform rotate-90 w-28 border-t border-linear2 hidden md:block">
+           
+            <div class="hidden md:flex gap-x-2 items-center">
+                <img src="images/mail.png" alt="mail icon" class="transform scale-95 md:scale-105 pl-10 md:pl-0">
+                <div class="flex flex-col text-white gap-y-1.5 pl-4">
+                    <h4 class="hidden md:block text-3xl font-bold">Send Us a Message</h4>
+                    <p class="text-base md:text-sm [word-spacing:5px] md:[word-spacing:0] pr-5 md:pr-0">Contact@HydraVTech.com</p>
+                </div>
+            </div>
+
+        </section>
+
+       
+        <!-- section with long arrow and text before about-->
+        <section class="mt-16 md:mt-24 2xl:mt-40 flex w-full" data-aos="fade-up" data-aos-duration="1000">
+
+            <!-- desktop -->
+            <div class="hidden md:flex flex-col justify-center uppercase text-white w-[45%] pl-10 grow">
+                <h2 class="font-bold text-[38px]">introduction</h2>
+                <div class="flex gap-x-8">
+                    <p class="font-light text-[38px]">to hydra vr </p>
+                    <img src="images/long-line.png" alt="long-arrow" class="hidden xl:block transform scale-x-110 -translate-y-[25%] ml-10">
+                </div>
+            </div>
+
+            <!-- mobile -->
+            <div class="md:hidden flex flex-col gap-2 justify-center uppercase text-white w-full items-center">
+                <h2 class="font-bold text-[32px]">introduction</h2>
+                <p class="font-light text-[30px]">to hydra vr </p>
+                </div>
+            </div>
+
+           <div class="hidden md:block w-3/5 text-[17px] 2xl:text-xl text-white [word-spacing:3px] pr-12 items-start leading-[150%] pl-20">
+                Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+            </div>
+
+        </section>
+
+        <!-- section of man with vr about section-->
+        <section class="mt-10 md:mt-32 xl:mt-20 flex flex-col xl:flex-row w-full relative md:grid md:grid-cols-2 xl:gap-10 md:justify-items-stretch md:items-center xl:flex
+            xl:items-start" id="about" data-aos="fade-up" data-aos-duration="1200">
+            <div class="w-full mx-auto ml-2 md:ml-0  md:grid-cols-1 xl:w-2/5" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <img src="images/man-with-vr.png" alt="man with vr" class="object-contain object-center w-[94%] md:w-[92%] h-[90%]">
+            </div>
+            <div class="flex h-auto flex-col gap-y-5 w-full md:grid-cols-1  xl:w-3/5 xl:pl-20 xl:pt-20" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                <h2 class="hidden md:flex text-4xl xl:text-[45px] leading-[110%] text-white uppercase flex-col gap-y-2">
+                    <span class="font-bold">About</span>
+                    <span class="font-extralight">Hydra vr</span>
+                </h2>
+                <p class="mt-10 md:mt-0 xl:mt-6 text-sm font-normal xl:text-[17px] 2xl:text-xl text-white [word-spacing:3px] px-3 xl:pr-12 items-start leading-[150%]">
+                    Eget mi proin sed libero enim sed faucibus turpis. Nisl rhoncus mattis rhoncus 
+                    urna neque viverra justo. Vivamus at augue eget arcu dictum. Ultrices gravida 
+                    dictum fusce ut placerat orci. Aenean et tortor at risus viverra adipiscing at in. 
+                    Mattis aliquam faucibus purus in massa. Est placerat in egestas erat imperdiet 
+                    sed. Consequat semper viverra nam libero justo laoreet sit amet. Aliquam 
+                    etiam erat velit scelerisque in dictum non consectetur a. Laoreet sit amet 
+                    cursus sit amet. Vel eros donec ac odio tempor orci dapibus. Sem nulla pha
+                    retra diam sit amet nisl suscipit adipiscing bibendum. Leo a diam sollicitudi
+                    n tempor.
+                </p>
+                <button class="mt-2 btn btn-main w-4/5 mx-auto md:w-1/2 xl:w-[30%]">Lets get in touch</button>
+            </div>
+
+            <img src="images/Vector 7.png" alt="vector" class="hidden md:block absolute w-full transform scale-[112%] 2xl:scale-x-125 -z-10 -top-10">
+            <img src="images/Vector 8.png" alt="vector" class="hidden md:block absolute w-full transform scale-[112%] 2xl:scale-x-125 -z-10 bottom-[15%]">
+
+        </section>
+
+         <!-- section with long arrow and text -->
+        <section class="mt-20 md:mt-32 xl:mt-12 2xl:mt-24 flex w-full" data-aos="fade-up" data-aos-duration="1000">
+
+            <!-- desktop -->
+            <div class="hidden md:flex flex-col justify-center uppercase text-white w-[45%] pl-10 grow">
+                <h2 class="font-bold text-[38px]">WHY BUILD</h2>
+                <div class="flex gap-x-8">
+                    <p class="font-light text-[38px]">with hydra? </p>
+                    <img src="images/long-line.png" alt="long-arrow" class="hidden xl:block transform -translate-y-[25%]">
+                </div>
+            </div>
+
+             <!-- mobile -->
+            <div class="md:hidden flex flex-col gap-2 justify-center uppercase text-white w-full items-center">
+                <h2 class="font-bold text-[32px]">WHY BUILD</h2>
+                <p class="font-light text-[30px]">with hydra?  </p>
+                </div>
+            </div>
+
+            <div class="hidden md:block w-3/5 text-[17px] 2xl:text-xl text-white [word-spacing:3px] pr-12 items-start leading-[150%] pl-20">
+                Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+            </div>
+
+        </section>
+
+        <!-- section with four cards - services section-->
+        <!-- mobile -->
+        <section class="md:hidden mt-10 md:mt-20 w-full" data-aos="fade-up" data-aos-duration="1000">
+            <div class="swiper w-full" id="swiper-2">
+            
+            <div class="swiper-wrapper" id="services">
+
+                <div class="swiper-slide w-full h-auto bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md relative">
+                    <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                        <img src="images/simulation.png" alt="simulation image" class="w-full h-full object-cover object-center rounded-full">
+                    </div>
+                    <div class="flex items-center flex-col gap-5 mt-8">
+                        <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">simulation</h3>
+                        <hr class="border-t border-linear2 w-3/5">
+                        <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                            Vitae sapien pellentesque habitant morbi
+                            nunc. Viverra aliquet porttitor rhoncus 
+                            libero justo laoreet sit amet vitae.
+                        </p>
+                        <button class="btn btn-main mt-5">Try it now</button>
+                    </div>
+                </div>
+            
+                <div class="swiper-slide mx-auto w-full bg-radial h-auto from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md">
+                    <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                        <img src="images/education.png" alt="education image" class="w-full h-full object-cover object-center rounded-full">
+                    </div>
+                    <div class="flex items-center flex-col gap-5 mt-8">
+                        <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">education</h3>
+                        <hr class="border-t border-linear2 w-3/5">
+                        <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                            Vitae sapien pellentesque habitant morbi
+                            nunc. Viverra aliquet porttitor rhoncus 
+                            libero justo laoreet sit amet vitae.
+                        </p>
+                        <button class="btn btn-main mt-5">Try it now</button>
+                    </div>
+                </div>
+            
+                <div class="swiper-slide mx-auto w-full bg-radial h-auto from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md">
+                    <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                        <img src="images/self-care.png" alt="self care image" class="w-full h-full object-cover object-center rounded-full">
+                    </div>
+                    <div class="flex items-center flex-col gap-5 mt-8">
+                        <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">self care</h3>
+                        <hr class="border-t border-linear2 w-3/5">
+                        <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                            Vitae sapien pellentesque habitant morbi
+                            nunc. Viverra aliquet porttitor rhoncus 
+                            libero justo laoreet sit amet vitae.
+                        </p>
+                        <button class="btn btn-main mt-5">Try it now</button>
+                    </div>
+                </div>
+            
+                <div class="swiper-slide mx-auto w-full bg-radial h-auto from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md">
+                    <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                        <img src="images/outdoor.png" alt="outdoor image" class="w-full h-full object-cover object-center rounded-full">
+                    </div>
+                    <div class="flex items-center flex-col gap-5 mt-8">
+                        <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">outdoor</h3>
+                        <hr class="border-t border-linear2 w-3/5">
+                        <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                            Vitae sapien pellentesque habitant morbi
+                            nunc. Viverra aliquet porttitor rhoncus 
+                            libero justo laoreet sit amet vitae.
+                        </p>
+                        <button class="btn btn-main mt-5">Try it now</button>
+                    </div>
+                </div>
+
+            </div>
+        
+            <!-- Pagination -->
+            <div class="swiper-pagination1 flex justify-center mt-6"></div>
+        
+            <!-- Custom navigation buttons -->
+            <div class="swiper-button-prev1 absolute -left-3.5 transform top-1/2 -translate-y-1/2 cursor-pointer z-50">
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chvron-left.png" alt="arrow left" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="swiper-button-next1 absolute -right-3.5 top-1/2 transform -translate-y-1/2 cursor-pointer z-50">
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chevron-right.png" alt="arrow right" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- desktop and tablet -->
+        <section class="hidden md:flex flex-col w-[90%] md:w-full md:flex-row gap-6 mt-10 md:mt-20 relative" id="services" data-aos="fade-up" data-aos-duration="1000">
+
+            <div class="w-full bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md relative">
+                <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                    <img src="images/simulation.png" alt="simualtion image" class="w-full h-full object-cover object-center rounded-full">
+                </div>
+                <div class="flex items-center flex-col gap-5 mt-8">
+                    <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">simulation</h3>
+                    <hr class="border-t border-linear2 w-3/5">
+                    <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                        Vitae sapien pellentesque habitant morbi
+                        nunc. Viverra aliquet  porttitor rhoncus 
+                        libero justo laoreet sit amet vitae.
+                    </p>
+                    <button class="btn btn-main mt-5">Try it now</button>
+                </div>
+
+                <!-- chevron buttons for mobile screens -->
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-5 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-5 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden md:block w-full bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md relative">
+                <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                    <img src="images/education.png" alt="simualtion image" class="w-full h-full object-cover object-center rounded-full">
+                </div>
+                <div class="flex items-center flex-col gap-5 mt-8">
+                    <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">education</h3>
+                    <hr class="border-t border-linear2 w-3/5">
+                    <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                        Vitae sapien pellentesque habitant morbi
+                        nunc. Viverra aliquet  porttitor rhoncus 
+                        libero justo laoreet sit amet vitae.
+                    </p>
+                    <button class="btn btn-main mt-5">Try it now</button>
+                </div>
+
+                <!-- chevron buttons for mobile screens -->
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-5 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-5 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden md:block w-full bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md relative">
+                <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                    <img src="images/self-care.png" alt="simualtion image" class="w-full h-full object-cover object-center rounded-full">
+                </div>
+                <div class="flex items-center flex-col gap-5 mt-8">
+                    <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">self care</h3>
+                    <hr class="border-t border-linear2 w-3/5">
+                    <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                        Vitae sapien pellentesque habitant morbi
+                        nunc. Viverra aliquet  porttitor rhoncus 
+                        libero justo laoreet sit amet vitae.
+                    </p>
+                    <button class="btn btn-main mt-5">Try it now</button>
+                </div>
+
+                <!-- chevron buttons for mobile screens -->
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-5 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+                <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-5 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden md:block w-full bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-3xl py-10 shadow-md relative">
+                <div class="bg-[#0E0E0E] w-[60%] h-auto mx-auto rounded-full p-3">
+                    <img src="images/outdoor.png" alt="simualtion image" class="w-full h-full object-cover object-center rounded-full">
+                </div>
+                <div class="flex items-center flex-col gap-5 mt-8">
+                    <h3 class="text-3xl tracking-[1px] text-white font-bold uppercase">outdoor</h3>
+                    <hr class="border-t border-linear2 w-3/5">
+                    <p class="text-sm leading-[180%] text-white px-8 mt-2.5">
+                        Vitae sapien pellentesque habitant morbi
+                        nunc. Viverra aliquet  porttitor rhoncus 
+                        libero justo laoreet sit amet vitae.
+                    </p>
+                    <button class="btn btn-main mt-5">Try it now</button>
+                </div>
+
+                <!-- chevron buttons for mobile screens -->
+                <div class="md:hidden bg-[#0E0E0E]/30 w-14  h-14 rounded-full p-2 absolute -left-5 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+                <div class="md:hidden bg-[#0E0E0E]/30 w-14  h-14 rounded-full p-2 absolute -right-5 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                    </div>
+                </div>
+
+            </div>
+            
+            <img src="images/Vector 14.png" alt="vector" class="hidden md:block w-full transform scale-x-110 absolute -z-10 top-20">
+
+        </section>
+
+         <!-- section with technologies and hardware -->
+        <section id="technologies" class="w-full" data-aos="fade-up" data-aos-duration="1200">
+            <div class="mt-16 md:mt-40 bg-[url('../images/imagebehindbg.png')] rounded-[50px] md:rounded-full w-full h-44 md:h-64 xl:h-88 bg-no-repeat bg-center bg-cover 
+                flex items-center justify-center relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <h2 class="text-white flex flex-col text-center gap-2 md:gap-5 tracking-[1px] text-lg md:text-[40px] xl:text-5xl">
+                    <span class="font-bold">TECHNOLOGIES & HARDWARE</span>
+                    <span class="font-light text-2xl md:text-[40px] xl:text-5xl">USED BY HYDRA VR.</span>
+                </h2>
+                <div class="hidden md:block bg-[#0E0E0E]/50 md:w-24 md:h-24 mx-auto rounded-full p-4 absolute -bottom-[15%] left-1/2 transform -translate-x-1/2 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                        <img src="images/arrow-down.png" alt="arrow down" class="object-center rounded-full transform scale-[120%]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Swiper for Technologies -->
+            <div class="md:hidden mt-20 w-full" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+
+                <div class="swiper w-full" id="swiper-3">
+                    <div class="swiper-wrapper flex items-center">
+                        <div class="swiper-slide flex items-center justify-center w-full">
+                            <img src="images/unrealengine.png" alt="unreal engine logo" class="mx-auto">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center w-full">
+                            <img src="images/unity.png" alt="unity logo" class="mx-auto">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center w-full">
+                            <img src="images/occulus.png" alt="occulus image" class="mx-auto">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center w-full">
+                            <img src="images/vive.png" alt="vive image" class="mx-auto">
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination3 flex justify-center -mt-10"></div>
+                    
+                    <!-- Custom navigation buttons -->
+                    <div class="swiper-button-prev3 absolute left-0 transform top-1/2 -translate-y-1/2 cursor-pointer z-50">
+                        <div class="bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                                <img src="images/chvron-left.png" alt="arrow left" class="object-center rounded-full transform scale-110">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-button-next3 absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer z-50">
+                        <div class="bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                                <img src="images/chevron-right.png" alt="arrow right" class="object-center rounded-full transform scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Technologies -->
+            <div class="hidden md:flex md:pl-[5%] flex-row items-center md:justify-between w-full mt-20" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="w-[90%] flex items-center justify-center">
+                    <img src="images/unrealengine.png" alt="unreal engine logo" class="transform scale-90 xl:scale-125">
+                </div>
+                <div class="w-[90%] flex items-center justify-center">
+                    <img src="images/unity.png" alt="unity logo" class="transform scale-90 xl:scale-125">
+                </div>
+                <div class="w-[90%] flex items-center justify-center">
+                    <img src="images/occulus.png" alt="occulus image" class="transform scale-90 xl:scale-125">
+                </div>
+                <div class="w-[90%] flex items-center justify-center">
+                    <img src="images/vive.png" alt="vive image" class="transform scale-90 xl:scale-125">
+                </div>
+            </div>
+        </section>
+
+        <!-- how we build section under technolgies -->
+        <section class="mt-18 md:mt-32 flex w-full" data-aos="fade-up" data-aos-duration="1000">
+
+            <!-- desktop -->
+            <div class="hidden md:flex flex-col justify-center uppercase text-white w-2/5 pl-10">
+                <h2 class="font-bold text-[38px]">HOW WE BUILD</h2>
+                <div class="flex gap-x-8">
+                    <p class="font-light text-[38px]">with hydra vr </p>
+                    <img src="images/long-line.png" alt="long-arrow" class="hidden xl:block transform -translate-y-[25%]">
+                </div>
+            </div>
+
+             <!-- mobile -->
+            <div class="md:hidden flex flex-col gap-2 justify-center uppercase text-white w-full items-center">
+                <h2 class="font-bold text-[32px]">HOW WE BUILD</h2>
+                <p class="font-light text-[30px]">with hydra vr  </p>
+                </div>
+            </div>
+
+            <div class="hidden md:block w-3/5 text-[17px] 2xl:text-xl text-white [word-spacing:3px] pr-12 items-start leading-[150%] pl-20">
+                Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat 
+                nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo 
+                quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare 
+                lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+            </div>
+
+        </section>
+
+        <!-- section with 4 circles -->
+        <!-- Mobile Swiper for 4 circles -->
+        <section class="md:hidden mt-12 w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="swiper w-full" id="swiper-4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex flex-col items-center w-full">
+                        <div class="bg-[#0E0E0E] w-52 h-52 mx-auto rounded-full p-5 cursor-pointer">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                                01
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center w-full h-auto mt-6">
+                            <p class="text-white font-bold text-2xl leading-[130%] tracking-[1px] text-center">3D Conception & Design</p>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide flex flex-col items-center w-full">
+                        <div class="bg-[#0E0E0E] w-52 h-52 mx-auto rounded-full p-5 cursor-pointer">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                                02
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center w-full h-auto mt-6">
+                            <p class="text-white font-bold text-2xl leading-[130%] tracking-[1px] text-center">Interaction Design</p>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide flex flex-col items-center w-full">
+                        <div class="bg-[#0E0E0E] w-52 h-52 mx-auto rounded-full p-5 cursor-pointer">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                                03
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center w-full h-auto mt-6">
+                            <p class="text-white font-bold text-2xl leading-[130%] tracking-[1px] text-center">VR World User Testing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide flex flex-col items-center w-full">
+                        <div class="bg-[#0E0E0E] w-52 h-52 mx-auto rounded-full p-5 cursor-pointer">
+                            <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                                04
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center w-full h-auto mt-6">
+                            <p class="text-white font-bold text-2xl leading-[130%] tracking-[1px] text-center">Hydra VR Deploy</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="swiper-pagination4 flex justify-center mt-6"></div>
+                
+                <!-- Custom navigation buttons -->
+                <div class="swiper-button-prev4 absolute -left-3.5 transform bottom-[8%] cursor-pointer z-50">
+                    <div class="bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chvron-left.png" alt="arrow left" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-button-next4 absolute -right-3.5 bottom-[8%]  cursor-pointer z-50">
+                    <div class="bg-[#0E0E0E]/50 w-14 h-14 rounded-full p-2">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chevron-right.png" alt="arrow right" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Desktop version of How We Build -->
+        <section class="hidden md:flex mt-12 md:mt-24 xl:px-[5%] w-full flex-row items-center justify-between relative" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+
+            <div class="flex flex-1 flex-col w-full">
+                <div class="bg-[#0E0E0E] w-52  h-52 mx-auto rounded-full p-5 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                        01
+                    </div>
+                </div>
+
+                <d1v class="relative flex justify-center items-center md:items-start w-full h-auto mt-6 md:mt-10 xl:px-[5%]">
+                    <img src="images/arrow-small-right.png" alt="arrow right" class="hidden md:block transform scale-105">
+                    <p class="text-white font-bold text-2xl xl:text-3xl md:text-wrap xl:pr-[10%] leading-[130%] md:tracking-[1px] text-center md:text-left">3D Conception & Design</p>
+
+                    <!-- chevron buttons for mobile screens -->
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-2 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+    
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                    
+                </d1v>
+                
+            </div>
+            
+            <div class="hidden md:flex flex-1 flex-col w-full">
+                <div class="bg-[#0E0E0E] w-52  h-52 mx-auto rounded-full p-5 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                        02
+                    </div>
+                </div>
+                <div class="relative flex justify-center items-start w-full h-auto mt-10 xl:px-[5%]">
+                    <img src="images/arrow-small-right.png" alt="arrow right" class="hidden md:block transform scale-105">
+                    <p class="text-white font-bold text-2xl xl:text-3xl md:text-wrap xl:pr-[10%] leading-[130%] md:tracking-[1px]">Interaction Design</p>
+                    <!-- chevron buttons for mobile screens -->
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-2 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+        
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex flex-1 flex-col w-full">
+                <div class="bg-[#0E0E0E] w-52  h-52 mx-auto rounded-full p-5 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                        03
+                    </div>
+                </div>
+                <div class="relative flex justify-center items-start w-full h-auto mt-10 xl:px-[5%]">
+                    <img src="images/arrow-small-right.png" alt="arrow right" class="hidden md:block transform scale-105">
+                    <p class="text-white font-bold text-2xl xl:text-3xl md:text-wrap xl:pr-[10%] leading-[130%] md:tracking-[1px]">VR World User Testing</p>
+                    <!-- chevron buttons for mobile screens -->
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-2 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+        
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex flex-1 flex-col w-full">
+                <div class="bg-[#0E0E0E] w-52  h-52 mx-auto rounded-full p-5 cursor-pointer">
+                    <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center text-[343045] text-6xl font-bold">
+                        04
+                    </div>
+                </div>
+                <div class="relative flex justify-center items-start w-full h-auto mt-10 xl:px-[5%]">
+                    <img src="images/arrow-small-right.png" alt="arrow right" class="hidden md:block transform scale-105">
+                    <p class="text-white font-bold text-2xl xl:text-3xl md:text-wrap xl:pr-[10%] leading-[130%] md:tracking-[1px]">Hydra Vr Deploy</p>
+                    <!-- chevron buttons for mobile screens -->
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -left-2 transform top-1/2  -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chvron-left.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+        
+                    <div class="md:hidden bg-[#0E0E0E]/50 w-14  h-14 rounded-full p-2 absolute -right-2 top-1/2 transform -translate-y-1/2 cursor-pointer">
+                        <div class="bg-linear-to-r from-linear1 to-linear2 w-full h-full rounded-full flex items-center justify-center">
+                            <img src="images/chevron-right.png" alt="arrow down" class="object-center rounded-full transform scale-110">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="images/Vector 15.png" alt="vector" class="hidden md:block absolute transform scale-[108%]  2xl:scale-[120%] w-full md:-left-3 xl:left-4 top-[10%] xl:-top-[5%] -z-10">
+           
+        </section>
+
+        <!-- form section -->
+        <section id="joinHydra" class="mt-24 md:mt-40 flex flex-col w-full bg-radial from-[#433D60] from-[5%] to-[#211E2E] to-[90%] rounded-[50px] 
+            md:rounded-[80px] shadow-md pt-10 pb-24" data-aos="fade-up" data-aos-duration="1200">
+
+            <h2 class="text-white text-3xl md:text-[42px] uppercase text-center font-bold tracking-[1px] mt-4 md:mt-10">Join Hydra</h2>
+            <hr class="bg-linear-to-r from-linear1 via-linear2 to-linear1 w-2/5 md:w-[25%] h-[2px] mx-auto mt-6 md:mt-5">
+            <h2 class="text-white text-[25px] md:text-4xl capitalize text-center font-light flex flex-col md:flex-row  mt-4 md:mt-5 tracking-[1px] leading-[150%]
+            items-center justify-center">
+                <span>Let’s Build</span> 
+               <span> Your VR Experience</span>
+            </h2>
+
+            <form class="flex flex-col items-center gap-y-6 px-[5%] mt-10 md:mt-20">
+
+                <div class="flex md:flex-row flex-col gap-y-6 w-full gap-x-4">
+                    <input type="text" placeholder="First Name" class="w-full border border-white text-lg py-5 px-10 rounded-full text-white font-light focus:outline-none">
+                    <input type="text" placeholder="Last Name" class="w-full border border-white text-lg py-5 px-10 rounded-full text-white font-light focus:outline-nones">
+                </div>
+                
+                <div class="flex md:flex-row flex-col gap-y-6 w-full gap-x-4">
+                    <input type="text" placeholder="Email" class="w-full border border-white text-lg py-5 px-10 rounded-full text-white font-light focus:outline-none">
+                    <input type="text" placeholder="Phone Number" class="w-full border border-white text-lg py-5 px-10 rounded-full text-white font-light focus:outline-nones">
+                </div>
+
+                <input type="text" placeholder="Subject" class="w-full border border-white text-lg py-5 px-10 rounded-full text-white font-light focus:outline-none">
+
+                <textarea placeholder="Tell Us Something" rows="6" class="w-full border border-white text-lg pt-8 pb-5 px-10 rounded-[40px] 
+                    text-white font-light focus:outline-none"></textarea>
+
+             
+                <button class="btn btn-main mt-5 ">send to hydra</button>
+
+            </form>
+
+        </section>
+
+        <!-- footer -->
+        <footer id="footer" class="w-full flex flex-col md:flex-row justify-between items-center mt-32 md:mt-40 relative" data-aos="fade-up" data-aos-duration="1000">
+
+            <div class="md:pl-[5%]">
+                <img src="images/logo.png" alt="logo" class="transform scale-[185%] md:scale-[165%]">
+            </div>
+
+            <hr class="hidden md:block bg-linear-to-r from-linear1 via-linear2 to-linear1 w-[12%] h-[6px] mx-auto mt-5 transform rotate-90">
+
+            <div class="hidden md:flex flex-col gap-y-4 text-white text-lg font-bold uppercase">
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Technologies</a>
+                <a href="">How To</a>
+                <a href="">Join Hydra</a>
+            </div>
+
+            <hr class="hidden md:block bg-linear-to-r from-linear1 via-linear2 to-linear1 w-[12%] h-[6px] mx-auto mt-5 transform rotate-90">
+
+            <div class="hidden md:flex flex-col gap-y-4 text-white text-lg font-bold uppercase">
+                <p>FAQ</p>
+                <p>SITEMAP</p>
+                <p>conditions</p>
+                <p>Licesnses</p>
+            </div>
+
+            <hr class="hidden md:block bg-linear-to-r from-linear1 via-linear2 to-linear1 w-[12%] h-[6px] mx-auto mt-5 transform rotate-90">
+
+            <div class="flex flex-col gap-10 mt-20 md:mt-0 uppercase">
+                <h4 class="text-lg text-white font-bold text-center">Socialize with hydra</h4>
+                <div class="flex items-center gap-x-5">
+                    <img src="images/facebook.png" alt="facebook logo">
+                    <img src="images/twitter.png" alt="twitter logp">
+                    <img src="images/linkedin.png" alt="linked in logo">
+                    <img src="images/youtube.png" alt="youtbe logo">
+                    <img src="images/instagram.png" alt="instagram logo">
+                    <img src="images/pinterest.png" alt="pineterest log0">
+                </div>
+                <button class="btn btn-main w-[90%]">build your world</button>
+            </div>
+
+           <!-- desktop -->
+            <img src="images/Vector 19.png" alt="vector" class="hidden 2xl:block absolute w-full scale-x-125 -top-[185%] -z-50">
+            <img src="images/Vector 18.png" alt="vector" class=" hidden 2xl:block absolute w-full scale-x-125 left-[5%] -z-50">
+
+            <!-- tablet -->
+            <img src="images/Vector 19.png" alt="vector" class="hidden md:block 2xl:hidden absolute w-full scale-x-[108%] -top-[185%] -z-50">
+            <img src="images/Vector 18.png" alt="vector" class=" hidden md:block 2xl:hidden absolute w-full scale-x-[108%] left-[2%] -z-50">
+
+            <!-- mobile -->
+            <img src="images/Vector 19 small.png" alt="vector" class="md:hidden absolute w-full  -top-[35%] -z-50">
+            <img src="images/Vector 18 small.png" alt="vector" class="md:hidden absolute w-full top-[5%] -z-50">
+        </footer>
+
+        <hr class="mt-16 md:mt-28 bg-linear-to-r from-linear1 via-linear2 to-linear1 w-[90%] h-[2px] mx-auto">
+
+        <p class="mt-10 md:mt-14 text-white text-center text-lg font-bold tracking-[1px] leading-[180%]">2025 © HYDRA LANDING PAGE - BY YUNG.MILTECH.L - ALL RIGHTS RESERVED </p>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- AOS JavaScript -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
